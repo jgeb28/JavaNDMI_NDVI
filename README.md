@@ -1,59 +1,59 @@
 # 🌿 NDVI & NDMI Analyzer
 
-Aplikacja desktopowa stworzona w ramach projektu z przedmiotu programowanie równoległe i rozproszone do analizy zobrazowań satelitarnych Sentinel-2 z wykorzystaniem wskaźników wegetacji (NDVI) i wilgotności (NDMI). Dzięki równoległemu przetwarzaniu danych aplikacja pozwala szybko i interaktywnie ocenić kondycję roślinności na wskazanym obszarze.
+A desktop application developed as part of the Parallel and Distributed Programming course project for analyzing Sentinel-2 satellite imagery using vegetation (NDVI) and moisture (NDMI) indices. Thanks to parallel data processing, the application allows for quick and interactive assessment of vegetation health over a selected area.
 
-## 🚀 Instrukcja Uruchomienia
+## 🚀 Launch Instructions
 
-Uruchomienie aplikacji:
+To run the application:
 
 ```
 mvn javafx:run
 ```
 
-lub:
+or:
 
 - Linux: `./mvnw javafx:run`
 - Windows: `mvnw.cmd javafx:run`
 
-## 🛠️ Technologie Wykorzystane
+## 🛠️ Technologies Used
 
 - **Java 17**
 - **JavaFX** – GUI
-- **GeoTools** – obsługa danych przestrzennych
-- **Rasterio (Python)** – konwersja plików `.jp2` → `.tif`
-- **Concurrency API (ExecutorService)** – przetwarzanie równoległe
-- **Maven** – budowanie i uruchamianie projektu
+- **GeoTools** – spatial data handling
+- **Rasterio (Python)** – conversion from `.jp2` to `.tif`
+- **Concurrency API (ExecutorService)** – parallel processing
+- **Maven** – project build and execution
 
-## 📂 Funkcjonalności
+## 📂 Features
 
-- ✅ Wczytywanie danych satelitarnych z Sentinel-2 (.zip)
-- ✅ Obliczanie indeksów **NDVI** i **NDMI**
-- ✅ Obsługa dużych obrazów dzięki przetwarzaniu równoległemu
-- ✅ Pauzowanie i wznawianie obliczeń
-- ✅ Zapis wyników jako obrazów `.png`
-- ✅ Interaktywny GUI z informacjami o postępie
+- ✅ Load Sentinel-2 satellite data (.zip)
+- ✅ Compute **NDVI** and **NDMI** indices
+- ✅ Handle large images via parallel processing
+- ✅ Pause and resume computations
+- ✅ Save results as `.png` images
+- ✅ Interactive GUI with progress updates
 
-## 🔄 Przetwarzanie
+## 🔄 Processing Workflow
 
-1. Wczytanie danych ZIP → konwersja pasm `.jp2` na `.tif` przez skrypt Pythona
-2. Skalowanie pasm do wspólnej rozdzielczości
-3. Równoległe liczenie NDVI i NDMI:
+1. Load ZIP data → convert `.jp2` bands to `.tif` using a Python script
+2. Rescale bands to match resolution
+3. Parallel computation of NDVI and NDMI:
 
 ```
 NDVI = (NIR - RED) / (NIR + RED)
 NDMI = (NIR - SWIR) / (NIR + SWIR)
 ```
 
-4. Generowanie obrazów wynikowych
+4. Generate output images
 
-## 🧩 Przykładowy Output
+## 🧩 Sample Output
 
-- 🌱 **NDVI** – zdrowa roślinność (zielony), uboga (brązowy)
+- 🌱 **NDVI** – healthy vegetation (green), poor vegetation (brown)
 
-![NDVI wynik](./ndvi.png)
+![NDVI result](./ndvi.png)
 
-- 💧 **NDMI** – wilgotne obszary (niebieski), suche (pomarańczowy)
+- 💧 **NDMI** – high moisture (blue), dry areas (orange)
 
-![NDMI wynik](./ndmi.png)
+![NDMI result](./ndmi.png)
 
-Do zobrazowania przykładowych plików wynikowych wykorzystałem zrzuty ekranu reczywistych plików.
+Screenshots of actual output images were used to visualize the example results.
