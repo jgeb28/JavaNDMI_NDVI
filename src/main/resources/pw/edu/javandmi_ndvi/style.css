@@ -1,0 +1,49 @@
+.bordered-titled-title {
+   -fx-background-color: #D9D9D9;
+   -fx-translate-y: -16;
+
+    /* New properties */
+    -fx-font-size: 15px;             /* Smaller font */
+    -fx-wrap-text: true;             /* Enable text wrapping */
+    -fx-max-width: 360;              /* Limit width to trigger wrapping */
+    -fx-padding: 0 10 0 10;
+    -fx-text-alignment: center;      /* Lines inside the label */
+    -fx-alignment: center;
+
+}
+
+.bordered-titled-border {
+  -fx-content-display: top;
+  -fx-border-insets: 20 15 15 15;
+  -fx-background-color: #D9D9D9;
+  -fx-border-color: black;
+  -fx-border-width: 1;
+}
+
+.bordered-titled-content {
+  -fx-padding: 26 10 10 10;
+}
+
+.my-button {
+    -fx-background-color: #CECDF9;
+    -fx-border-color: black;
+}
+
+.my-button:hover {
+    -fx-background-color: #B9B7FF;
+    -fx-border-color: black;
+}
+
+.my-button:pressed {
+    -fx-background-color: #908DEE;
+    -fx-border-color: black;
+}
+
+.my-radio-button .radio {
+      -fx-background-color: #CECDF9;
+      -fx-border-color: black;
+      -fx-border-radius: 10;
+      -fx-background-radius: 10;
+
+ }
+
